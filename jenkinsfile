@@ -18,6 +18,12 @@ pipeline {
                 git 'https://github.com/DevanshuALW/DevOps-Project-Zomato-Kastro.git'
             }
         }
+        stage("Check Node") {
+            steps {
+                sh "node -v"
+                sh "npm -v"
+            }
+        }
         stage("Sonarqube Analysis"){
             steps{
                 withSonarQubeEnv('sonar-server') {
